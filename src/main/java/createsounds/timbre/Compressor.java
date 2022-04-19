@@ -19,6 +19,11 @@ public class Compressor {
 		
 	}
 	
+	public Compressor(double threshold, double ratio) {
+		this.threshold = threshold;
+		this.ratio = ratio;
+	}
+	
 	public Compressor(double threshold, double ratio, double attack, double release) {
 		this.threshold = threshold;
 		this.ratio = ratio;

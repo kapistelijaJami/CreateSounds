@@ -1,5 +1,6 @@
 package createsounds;
 
+import audiofilereader.AudioFileReader;
 import audiofilereader.MusicData;
 import createsounds.notation.SheetMusic;
 import createsounds.songs.BillieJean;
@@ -12,6 +13,9 @@ import createsounds.songs.SunshineOfYourLove;
 import createsounds.songs.TwinkleTwinkleLittleStar;
 import createsounds.songs.UkkoNooa;
 import audioplayer.Game;
+import createsounds.timbre.Compressor;
+import createsounds.timbre.filters.HighPassFilter;
+import createsounds.timbre.filters.LowPassFilter;
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -43,5 +47,13 @@ public class Main {
 		
 		Game game = new Game(musicData);
 		new Thread(game).start();
+		
+		
+		/* Filter and compressor usage:
+		new HighPassFilter(2000, 1.5, musicData.sampleRate).apply(samples, 1);
+		new LowPassFilter(3000, 1.5, musicData.sampleRate).apply(samples, 1);
+		new Compressor(0.32, 60).apply(samples, musicData.sampleRate, 1);
+		musicData.clearData();
+		musicData.setSamples(samples);*/
 	}
 }
