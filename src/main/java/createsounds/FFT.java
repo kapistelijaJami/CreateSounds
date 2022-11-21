@@ -5,7 +5,7 @@ import org.quifft.QuiFFT;
 import org.quifft.output.FFTFrame;
 import org.quifft.output.FFTResult;
 import org.quifft.output.FrequencyBin;
-import stopwatchtimerrender.Settings;
+import timer.DurationFormat;
 
 public class FFT {
 	public static void doFFT() {
@@ -39,7 +39,7 @@ public class FFT {
 	private static void printSamplingWindow(FFTResult fft, int window) {
 		FFTFrame frame = fft.fftFrames[window];
 		
-		System.out.println("This sampling window is " + window + " at the timestamp of " + new Settings("hh:mm:ss.lll").format(Duration.ofMillis((long) frame.frameStartMs)));
+		System.out.println("This sampling window is " + window + " at the timestamp of " + new DurationFormat("hh:mm:ss.lll").format(Duration.ofMillis((long) frame.frameStartMs)));
 		
 		for (int i = 0; i < frame.bins.length; i++) {
 			FrequencyBin bin = frame.bins[i];
@@ -62,7 +62,7 @@ public class FFT {
 			}
 		}
 		
-		System.out.println(new Settings("hh:mm:ss.lll").format(Duration.ofMillis((long) frame.frameStartMs)) + " " +
+		System.out.println(new DurationFormat("hh:mm:ss.lll").format(Duration.ofMillis((long) frame.frameStartMs)) + " " +
 				"\tMax amplitude: " + (fft.fftParameters.useDecibelScale ? String.format("%.2f", amp).replace(',', '.') + " dB" : String.format("%.2f", amp).replace(',', '.')) + ", freq: " + Math.round(freq) + " Hz");
 	}
 }

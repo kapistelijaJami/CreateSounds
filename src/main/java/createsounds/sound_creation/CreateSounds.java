@@ -40,7 +40,7 @@ public class CreateSounds {
 		noteSampleCache = null;
 		
 		MusicData musicData = MusicData.createMusicData(sampleRate, 2);
-		musicData.setSamplesDuplicateChannel(HelperFunctions.intArrayToShortArray(allSamples));
+		musicData.setSamples(HelperFunctions.intArrayToShortArray(allSamples), true);
 		
 		return musicData;
 	}

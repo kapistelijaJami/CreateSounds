@@ -13,8 +13,8 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>stopwatchtimerrender</groupId>
-			<artifactId>StopwatchTimerRender</artifactId>
+			<groupId>timer</groupId>
+			<artifactId>Timer</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		

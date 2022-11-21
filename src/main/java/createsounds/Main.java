@@ -12,7 +12,7 @@ import createsounds.songs.LivingOnAPrayer;
 import createsounds.songs.SunshineOfYourLove;
 import createsounds.songs.TwinkleTwinkleLittleStar;
 import createsounds.songs.UkkoNooa;
-import audioplayer.Game;
+import audioplayer.AudioPlayerGUI;
 import createsounds.timbre.Compressor;
 import createsounds.timbre.filters.HighPassFilter;
 import createsounds.timbre.filters.LowPassFilter;
@@ -45,7 +45,7 @@ public class Main {
 		/*FileOutputStream os = new FileOutputStream(new File("Billie Jean synthesized.wav"));
 		SaveToWav.PCMtoFile(os, musicData.dataBytes, musicData.sampleRate, musicData.numberOfChannels, musicData.bitsPerSample);*/
 		
-		Game game = new Game(musicData);
+		AudioPlayerGUI game = new AudioPlayerGUI(musicData);
 		new Thread(game).start();
 		
 		
